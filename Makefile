@@ -8,7 +8,7 @@ $(PROJ): color.json $(SRCS)
 
 .PHONY: run
 run: $(PROJ)
-	./$(PROJ)
+	./$(PROJ) demo
 
 .PHONY: clean
 clean:

@@ -1,12 +1,26 @@
 package main
 
 import (
-	color "github.com/eiri/nippon-colors"
+	"log"
+	"os"
+
+	"github.com/spf13/cobra"
 )
 
+var (
+	rootCmd = &cobra.Command{
+		Use:   "nipponcolors",
+		Short: "A cli helper for nippon-colors package",
+	}
+)
+
+func init() {
+	log.SetFlags(0)
+	log.SetOutput(os.Stdout)
+}
+
 func main() {
-	for i := 0; i < 250; i++ {
-		c := color.Color(i)
-		c.Printf("███ %s %s %s %s\n", c, c.Name(), c.Shade(), c.Hue())
+	if err := rootCmd.Execute(); err != nil {
+		log.Fatal(err)
 	}
 }
