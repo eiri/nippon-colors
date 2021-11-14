@@ -19,8 +19,15 @@ func init() {
 }
 
 func runDemo(cmd *cobra.Command, args []string) {
-	for i := 0; i < 250; i++ {
-		c := color.Color(i)
-		c.Printf("███ %s %s %s %s\n", c, c.Name(), c.Shade(), c.Hue())
+	color.Shironezumi.Println("Colors for dark background")
+	for _, c := range color.Dark.Series() {
+		c.Print("▀")
 	}
+	color.Shironezumi.Println("")
+
+	color.Shironezumi.Println("Colors for bright background")
+	for _, c := range color.Bright.Series() {
+		c.Print("▀")
+	}
+	color.Shironezumi.Println("")
 }
