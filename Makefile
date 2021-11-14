@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := run
+.DEFAULT_GOAL := demo
 
 PROJ := nipponcolors
 SRCS := $(shell find $(CURDIR) -name '*.go')
@@ -6,8 +6,8 @@ SRCS := $(shell find $(CURDIR) -name '*.go')
 $(PROJ): color.json const.go $(SRCS)
 	go build -o $@ ./cmd/$(PROJ)/...
 
-.PHONY: run
-run: $(PROJ)
+.PHONY: demo
+demo: $(PROJ)
 	./$(PROJ) demo
 
 .PHONY: clean
