@@ -3,7 +3,7 @@ Traditional Japan colors for 24bit terminal
 
 ## Overview
 
-[Nippon colors](https://nipponcolors.com) is a collection of colors traditionally used in Japanese arts and crafts. This library exposes those colors for 24bit terminal output as a collection of wrappers of [gookit.Color](https://github.com/gookit/color) types. The color list and data taken from [https://github.com/ssshooter/nippon-color](nipponcolor) PWA repository.
+[Nippon colors](https://nipponcolors.com) is a collection of colors traditionally used in Japanese arts and crafts. This library exposes those colors for 24bit terminal output as a collection of wrappers of [gookit.Color](https://github.com/gookit/color) types. The color list and data taken from [nipponcolor](https://github.com/ssshooter/nippon-color) PWA repository.
 
 ## Usage
 
