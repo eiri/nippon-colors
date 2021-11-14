@@ -29,6 +29,19 @@ const (
 `
 )
 
+var (
+	shades = map[string]int{"d": 300, "b": 301}
+	hues   = map[string]int{
+		"r": 305,
+		"b": 306,
+		"w": 307,
+		"p": 308,
+		"c": 309,
+		"g": 310,
+		"y": 311,
+	}
+)
+
 func main() {
 	fileName := os.Args[1]
 	if fileName == "" {
@@ -57,6 +70,10 @@ func main() {
 				e[f[0]] = f[1]
 			case "color":
 				e[f[0]] = strings.Title(strings.ToLower(f[1]))
+			case "f":
+				e["shade"] = shades[f[1]]
+			case "c":
+				e["hue"] = hues[f[1]]
 			case "Drgb":
 				r, _ := strconv.Atoi(f[1])
 				g, _ := strconv.Atoi(f[2])

@@ -27,3 +27,13 @@ func (c Color) Printf(format string, args ...interface{}) {
 func (c Color) Println(args ...interface{}) {
 	colorMap[c].Println(args...)
 }
+
+// Shade returns string representation of a shade for a given color
+func (c Color) Shade() string {
+	return colorMap[c].Shade.String()
+}
+
+// Hue returns string representation of a hue for a given color
+func (c Color) Hue() string {
+	return colorMap[c].Hue.String()
+}
