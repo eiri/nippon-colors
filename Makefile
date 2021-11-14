@@ -3,7 +3,7 @@
 PROJ := nipponcolors
 SRCS := $(shell find $(CURDIR) -name '*.go')
 
-$(PROJ): color.json $(SRCS)
+$(PROJ): color.json const.go $(SRCS)
 	go build -o $@ ./cmd/$(PROJ)/...
 
 .PHONY: run
@@ -18,5 +18,11 @@ clean:
 color.js:
 	curl -L https://raw.githubusercontent.com/ssshooter/nippon-color/master/src/data/color.js -o $@
 
-color.json: color.js
-	go run ./cmd/convert/main.go $< | jq -cM '.' > $@
+color.json: color.js convert
+	./convert to_json -i $< -o $@
+
+const.go: color.json convert
+	./convert to_const -i $< -o $@
+
+convert:
+	go build -o $@ ./cmd/convert/...

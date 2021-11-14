@@ -6,6 +6,8 @@
 *.dylib
 nipponcolors
 !nipponcolors/
+convert
+!convert/
 
 # Test binary, built with `go test -c`
 *.test
