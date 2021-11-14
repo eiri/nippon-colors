@@ -3,13 +3,13 @@ package nipponcolors
 type hue int
 
 const (
-	red hue = iota + 305
-	black
-	white
-	purple
-	cyan
-	green
-	yellow
+	Red hue = iota + 305
+	Black
+	White
+	Purple
+	Cyan
+	Green
+	Yellow
 )
 
 func (h hue) String() string {
@@ -22,4 +22,14 @@ func (h hue) String() string {
 		310: "green",
 		311: "yellow",
 	}[h]
+}
+
+func (h hue) Series() []Color {
+	colors := make([]Color, 0)
+	for i, c := range colorMap {
+		if c.Hue == h {
+			colors = append(colors, Color(i))
+		}
+	}
+	return colors
 }
