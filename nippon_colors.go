@@ -71,11 +71,3 @@ func init() {
 		colorMap[i].RGBColor = color.RGB(c.Red, c.Green, c.Blue)
 	}
 }
-
-// List outputs list of all const colors
-func List() {
-	for i := range colorMap {
-		c := Color(i)
-		c.Printf("███ %s %s %s %s\n", c, c.Name(), c.Shade(), c.Hue())
-	}
-}
